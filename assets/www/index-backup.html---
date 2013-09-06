@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+</head>
+<body style="text-align: center;background-color: #99aabb;">
+<h1>Hello Cordova</h1>
+</body>
+</html>

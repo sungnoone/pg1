@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/jquery.mobile-1.3.1.css" />
+    <link rel="stylesheet" href="css/jquery.mobile.theme-1.3.1.css" />
+    <link rel="stylesheet" href="css/jquery.mobile.structure-1.3.1.css" />
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.3.1.js"></script>
+    <script type="text/javascript" charset="utf-8" src="datePickerPlugin.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <title>建立情報</title>
+</head>
+<body>
+<div data-role="page">
+    <div data-role="header">
+        <a href="index.html" data-role="home">Home</a>
+        <h1>建立情報</h1>
+
+    </div><!-- /header -->
+
+    <div data-role="content">
+        <div data-role="fieldcontain">
+            <a href="#" data-role="button" data-theme="a" onclick="readDir()">FileSystem root 檔案列表</a>
+        </div>
+        <div data-role="fieldcontain">
+            <label for="addinfo_txtYear" >年度：</label>
+            <select name="addinfo_txtYear" id="addinfo_txtYear" onclick="yearSelectItemsSetup()"></select>
+        </div>
+        <div data-role="fieldcontain">
+            <label for="addinfo_txtCreateDate">建立日期：</label>
+            <input type="text" name="addinfo_txtCreateDate" id="addinfo_txtCreateDate" readonly onclick="datePicker()" />
+        </div>
+        <div data-role="fieldcontain">
+            <label for="addinfo_txtViewer">情報對象：</label>
+            <input type="text" name="addinfo_txtViewer" id="addinfo_txtViewer" />
+        </div>
+        <div data-role="fieldcontain">
+            <label for="addinfo_txtCreator">立案者：</label>
+            <input type="text" name="addinfo_txtCreator" id="addinfo_txtCreator" />
+        </div>
+        <div data-role="fieldcontain">
+            <label for="addinfo_txtClass">情報類別：</label>
+            <input type="text" name="addinfo_txtClass" id="addinfo_txtClass" />
+        </div>
+        <div data-role="fieldcontain">
+            <label for="addinfo_txtField">領域別：</label>
+            <input type="text" name="addinfo_txtField" id="addinfo_txtField" />
+        </div>
+        <div data-role="fieldcontain">
+            <label for="addinfo_txtSubject">主旨：</label>
+            <input type="text" name="addinfo_txtSubject" id="addinfo_txtSubject" />
+        </div>
+        <div data-role="fieldcontain">
+            <label for="addinfo_txtContent">內容：</label>
+            <input type="text" name="addinfo_txtContent" id="addinfo_txtContent" />
+        </div>
+        <div data-role="fieldcontain">
+            <label for="addinfo_txtMemo">備註：</label>
+            <input type="text" name="addinfo_txtMemo" id="addinfo_txtMemo" />
+        </div>
+        <div data-role="fieldcontain">
+            <a href="#" data-role="button" id="addinfo_btnSave" data-theme="b" onclick="btnAddSave();">儲存</a>
+            <a href="#" data-role="button" id="addinfo_btnCancel" data-theme="b">取消</a>
+        </div>
+        <div data-role="fieldcontain">
+            <label for="addinfo_txtImage">圖片：</label>
+            <input type="text" name="addinfo_txtImage" id="addinfo_txtImage" />
+            <a href="#" data-role="button"  data-inline="true" data-theme="e" data-icon="star" onclick="capturePhoto(pictureSource.CAMERA)">拍照</a>
+            <img style="display: none; width: 60px; height: 60px" id="smallImage" src="">
+            <img style="display: none; width: 100px; height: 100px" id="largeImage" src="">
+        </div>
+    </div><!-- /content -->
+
+</div><!-- /page -->
+
+</body>
+</html>
