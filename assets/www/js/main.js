@@ -18,8 +18,9 @@ function onDeviceReady(){
     $(document).delegate("#page2", "pagecreate", function(){
         yearSelectItemsSetup();
         targetSelectItemsSetup();
-        classSelectItemsSetup()
+        classSelectItemsSetup();
     });
+
 }
 
 /*$(document).ready(function(){
@@ -34,7 +35,7 @@ function onDeviceReady(){
             var items = [];
             $.each(data, function(key, val){
                 if(key=="objects"){
-                    btnQueryClick_Result_Parse(val)
+                    btnQueryClick_Result_Parse(val);
                 }
             });
         });
@@ -55,6 +56,8 @@ function onDeviceReady(){
 }
 
 //======== 網路服務存取(寫回) =============
+
+// Post data only
 function btnAddSave(){
 /*    var jsonStr = JSON.stringify({
         "info_Year": $("#addinfo_txtYear").val(),
@@ -98,6 +101,35 @@ function btnAddSave(){
        alert(request.status+request.statusText);
     });
 }
+
+// post data with uploading file
+function btnAddSave_upload(){
+    var jsonStr = '{' +
+        '"info_Class":"' + $("#addinfo_txtClass").val() + '",' +
+        '"info_Content":"' + $("#addinfo_txtContent").val() + '",' +
+        '"info_Create_Date":"' + $("#addinfo_txtCreateDate").val() + '",'  +
+        '"info_Field":"' + $("#addinfo_txtField").val() + '",' +
+        '"info_Image":"' + 'none' + '",' +
+        '"info_Memo":"' + $("#addinfo_txtMemo").val() + '",' +
+        '"info_Subject":"' + $("#addinfo_txtSubject").val() + '", ' +
+        '"info_Year":"' + $("#addinfo_txtYear").val() + '"'
+        + '}';
+    alert(jsonStr);
+    var request = $.ajax({
+        url:"http://infosys.hanlin.com.tw/infos/api/info/",
+        type: 'POST',
+        contentType: 'application/json',
+        data: jsonStr,
+        dataType: 'json',
+        processData: false
+    });
+    request.always(function(){
+        alert("Second complete");
+        alert(request.status+request.statusText);
+    });
+}
+
+
 
 //========= 照相功能 =========
 function capturePhoto(source){
@@ -405,3 +437,576 @@ function syncDB_GetData_fail(error){
     alert("syncDB_GetData_fail! "+error.code);
 }
 
+//======== Page7 jQuery File Upload 測試 ===========
+{
+    function page7_upload(source){
+        navigator.camera.getPicture(page7_onUploadURISuccess, page7_onUploadFail, {
+            quality: 75,
+            destinationType: destinationType.FILE_URI,
+            allowEdit:true,
+            saveToPhotoAlbum:true,
+            correctOrientation:true,
+            sourceType:source
+        });
+    }
+
+    function page7_onUploadURISuccess(imageURI){
+        var largeImage = document.getElementById('cameraImage');
+        largeImage.style.display = 'block';
+        largeImage.src = imageURI;
+
+        //var upload_url = "";
+//        $.ajax({
+//            type: "GET",
+//            url: "http://dev-gae1.appspot.com/url",
+//            success:function(responseText){
+//                fileTransfer(responseText,imageURI);
+//            },
+//            fail:page7_onUploadFail
+//        });
+        //fileTransfer("http://formsample1.hanlin.com.tw/form/upload/",imageURI);
+        $.ajax({
+            type: "GET",
+            url: "http://formsample1.hanlin.com.tw/form/info/",
+            success:function(responseText){
+                alert(responseText);
+                fileTransfer("http://formSample1.hanlin.com.tw/form/info/",imageURI);
+            },
+            fail:page7_onUploadFail
+        });
+
+    }
+
+    function page7_onUploadFail(message){
+        alert('Failed because: ' + message);
+    }
+
+    function fileTransfer(upload_url,image_uri){
+        var options = new FileUploadOptions();
+        options.fileKey = "file";
+        options.fileName = image_uri.substr(image_uri.lastIndexOf("/")+1);
+        options.mimeType = "image/jpeg";
+        var params = {};
+        //params.value1 = "test";
+        //params.value2 = "param";
+        var ft = new FileTransfer();
+        alert(image_uri);
+        alert(options.fileName);
+        ft.upload(image_uri, encodeURI(upload_url), fileTransfer_success, fileTransfer_fail, options);
+    }
+
+    function fileTransfer_success(r) {
+        alert("Code = " + r.responseCode);
+        alert("Response = " + r.response);
+        alert("Sent = " + r.bytesSent);
+    }
+
+    function fileTransfer_fail(error) {
+        alert("An error has occurred: Code = " + error.code);
+        alert("upload error source " + error.source);
+        alert("upload error target " + error.target);
+    }
+
+}
+
+
+//======== Page10  jQuery File Upload 測試 ===========
+{
+
+    function getFileSystem() {
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,
+            function(fileSystem){
+                var rootDir = fileSystem.root;
+                var dcimDir = rootDir.getDirectory("dcim/Camera", {create:false},
+                    function(dcim){
+                        listDir(dcim, $("#page10_gallery"));
+                    },
+                    function(error){
+                        alert(error.code);
+                    }
+                );
+            },
+            function(evt){
+                alert(evt.target.error.code);
+            }
+        );
+    }
+
+    function listDir(dirEntry, domParent){
+        $.mobile.showPageLoadingMsg();
+        var dirReader = dirEntry.createReader();
+        dirReader.readEntries(
+            function(entries){
+                for(var v1=0; v1<entries.length; v1++){
+                    $("#page10_fieldcontain").append("<p>"+entries[v1].fullPath+"</p>");
+/*                    if(v1%2 == 0){
+                        domParent.append("<div class='ui-block-a'><div class='thumbnail'><img src=" + entries[v1].fullPath + " title=" + entries[v1].name + "/></div></div>");
+                    }else{
+                        domParent.append("<div class='ui-block-b'><div class='thumbnail'><img src=" + entries[v1].fullPath + " title=" + entries[v1].name +"/></div></div>");
+                    }*/
+                }
+                $.mobile.hidePageLoadingMsg();
+            },
+            function(error){
+                alert(error.code);
+            });
+    }
+
+    function getDirSuccess(entries) {
+        var i;
+        for (i=0; i<entries.length; i++) {
+            console.log(entries[i].name);
+            $('#page10_fieldcontain').append("<p>"+entries[i].name+"</p>")
+        }
+    }
+
+    function getDirFail(error) {
+        alert("error:" + error.code);
+    }
+
+
+    function page10_upload(source){
+        navigator.camera.getPicture(page10_onUploadURISuccess, page10_onUploadFail, {
+            quality: 75,
+            destinationType: destinationType.FILE_URI,
+            allowEdit:true,
+            saveToPhotoAlbum:true,
+            correctOrientation:true,
+            sourceType:source
+        });
+    }
+
+    function page10_onUploadURISuccess(imageURI){
+        var largeImage = document.getElementById('page10_cameraImage');
+        largeImage.style.display = 'block';
+        largeImage.src = imageURI;
+
+        $.ajax({
+            type: "GET",
+            url: "http://formsample1.hanlin.com.tw/form/upload/",
+            success:function(responseText){
+                alert(responseText);
+                page10_fileTransfer("http://formSample1.hanlin.com.tw/form/upload/",imageURI);
+            },
+            fail:page10_onUploadFail
+        });
+
+    }
+
+    function page10_onUploadFail(message){
+        alert('Failed because: ' + message);
+    }
+
+    function page10_fileTransfer(upload_url,image_uri){
+        var options = new FileUploadOptions();
+        options.fileKey = "file";
+        options.fileName = image_uri.substr(image_uri.lastIndexOf("/")+1);
+        options.mimeType = "image/jpeg";
+        var params = {};
+        //params.value1 = "test";
+        //params.value2 = "param";
+        var ft = new FileTransfer();
+        alert(image_uri);
+        alert(upload_url);
+        //ft.upload(image_uri, encodeURI(upload_url), fileTransfer_success, fileTransfer_fail, options);
+        ft.upload(image_uri, upload_url, fileTransfer_success, function(error){
+            alert("File Transfer Error Code: "+error.code+" image_url:"+image_uri);
+        }, options);
+    }
+
+}
+
+// ==================== Page 11 =============================
+{
+    // Upload from Camera
+    function page11_upload(source){
+            navigator.camera.getPicture(page11_onUploadURISuccess, page11_onUploadFail, {
+                quality: 50,
+                destinationType: destinationType.FILE_URI,
+                allowEdit:true,
+                saveToPhotoAlbum:true,
+                correctOrientation:true,
+                sourceType:source
+            });
+    }
+
+    function page11_onUploadURISuccess(imageURI){
+        var upload_url = "http://formSample1.hanlin.com.tw/form/upload/";
+        var largeImage = document.getElementById('page11_cameraImage');
+        largeImage.style.display = 'block';
+        largeImage.src = imageURI;
+        $.ajax({
+            type: "GET",
+            url: "http://formsample1.hanlin.com.tw/form/upload/",
+            success:function(responseText){
+                alert(responseText);
+                page11_fileTransfer("http://formSample1.hanlin.com.tw/form/upload/",imageURI);
+            },
+            fail:page11_onUploadFail
+        });
+
+    }
+
+    function page11_onUploadFail(message){
+        alert('Failed because: ' + message);
+    }
+
+    // Upload from Camera
+    function page11_fileTransfer(upload_url,image_uri){
+        var options = new FileUploadOptions();
+        options.fileKey = "file";
+        options.fileName = image_uri.substr(image_uri.lastIndexOf("/")+1);
+        options.mimeType = "image/jpeg";
+        var params = {};
+        //params.value1 = "test";
+        //params.value2 = "param";
+        alert(image_uri);
+        alert(upload_url);
+        options.params = params;
+        var ft = new FileTransfer();
+        ft.upload(image_uri, upload_url,
+            function(r){
+                alert("Code = " + r.responseCode);
+                alert("Response = " + r.response);
+                alert("Sent = " + r.bytesSent);
+            },
+            function(error){
+                alert("An error has occurred: Code = " + error.code);
+                alert("upload error source " + error.source);
+                alert("upload error target " + error.target);
+            },
+            options, true);
+    }
+
+    // Upload from the specified file
+    function page11_upload_from_specified(){
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,
+            function(fileSystem){
+                var rootDir = fileSystem.root;
+                var fs = rootDir.getFile("dcim/Camera/1380079547407.jpg", null,
+                    function(fileEntry){
+                        fileEntry.file(function(file){
+                            var upload_url = "http://formSample1.hanlin.com.tw/form/upload/";
+                            var options = new FileUploadOptions();
+                            var filename = file.fullPath;
+                            options.fileKey = "file";
+                            options.fileName = filename.substr(filename.lastIndexOf("/")+1);
+                            options.mimeType = "image/jpeg";
+                            var params = new Object();
+                            options.params = params;
+                            var ft = new FileTransfer();
+                            ft.upload(filename, upload_url,
+                                function(r){
+                                    alert("Code = " + r.responseCode);
+                                    alert("Response = " + r.response);
+                                    alert("Sent = " + r.bytesSent);
+                                },
+                                function(error){
+                                    alert("An error has occurred: Code = " + error.code);
+                                    alert("upload error source " + error.source);
+                                    alert("upload error target " + error.target);
+                                },
+                                options, true);
+
+                        }, page11_upload_from_specified_fail);
+                    },
+                    function(error){
+                        alert(error.code);
+                    });
+            },
+            page11_upload_from_specified_fail
+            );
+    }
+
+    function page11_upload_from_specified_fail(evt){
+        alert(evt.target.error.code);
+    }
+
+}
+
+
+// =================== Page12 =============================
+
+{
+
+    // Use camera to capture photo
+    function page12_Camera(source){
+        navigator.camera.getPicture(
+            function(imageURI){
+                var largeImage = document.getElementById('page12_cameraImage');
+                largeImage.style.display = 'block';
+                largeImage.src = imageURI;
+            },
+            function(evt){
+                alert(evt.target.error.code);
+            },
+            {
+            quality: 50,
+            destinationType: destinationType.FILE_URI,
+            allowEdit:true,
+            saveToPhotoAlbum:true,
+            correctOrientation:true,
+            sourceType:source
+        });
+    }
+
+    function page12_Save(){
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,
+            function(fileSystem){
+                var image_path = $("#page12_cameraImage").prop("src");
+                var rootDir = fileSystem.root;
+                var image_rel_path = image_path.replace(rootDir.fullPath+"/", ""); // 只要 root 以下的路徑
+                var fs = rootDir.getFile(image_rel_path, null,
+                    function(fileEntry){
+                        fileEntry.file(function(file){
+                            var upload_url = "http://formSample1.hanlin.com.tw/form/upload/";
+                            var options = new FileUploadOptions();
+                            var filename = file.fullPath;
+                            options.fileKey = "info_img1";
+                            options.fileName = filename.substr(filename.lastIndexOf("/")+1);
+                            options.mimeType = "image/jpeg";
+                            var params = {};
+                            // Other Text Data
+                            params.info_Subject = $("#page12_txtSubject").val();
+                            options.params = params;
+                            var ft = new FileTransfer();
+                            ft.upload(filename, upload_url,
+                                function(r){
+                                    alert("Code = " + r.responseCode);
+                                    alert("Response = " + r.response);
+                                    alert("Sent = " + r.bytesSent);
+                                    //page12_Submit_TextData(r.response);
+                                },
+                                function(error){
+                                    alert("An error has occurred: Code = " + error.code);
+                                    alert("upload error source " + error.source);
+                                    alert("upload error target " + error.target);
+                                },
+                                options, true);
+                        }, page12_Submit_Fail);
+                    },
+                    function(error){
+                        alert("filesystem getFile fail: "+error.code);
+                    });
+            },
+            page12_Submit_Fail
+        );
+    }
+
+    function page12_Submit_Fail(evt){
+        alert(evt.target.error.code);
+    }
+
+    function page12_Submit_TextData(fileid){
+        var jsonStr = '{' +
+            '"info_Class":"' + $("#page12_txtClass").val() + '",' +
+            '"info_Content":"' + $("#page12_txtContent").val() + '",' +
+            '"info_Create_Date":"' + $("#page12_txtCreateDate").val() + '",'  +
+            '"info_Field":"' + $("#page12_txtField").val() + '",' +
+            '"info_Memo":"' + $("#page12_txtMemo").val() + '",' +
+            '"info_Subject":"' + $("#page12_txtSubject").val() + '", ' +
+            '"info_Year":"' + $("#page12_txtYear").val() + '",' +
+            '"info_img1":"' + fileid + '"'
+            + '}';
+        alert(jsonStr);
+        var request = $.ajax({
+            url:"http://formSample1.hanlin.com.tw/form/minfo/",
+            type: 'POST',
+            contentType: 'application/json',
+            data: jsonStr,
+            dataType: 'json',
+            processData: false,
+            success:function(){
+                alert("OK! ");
+             },
+             error:function(e){
+                alert("Error!"+ e);
+             }
+        });
+        request.always(function(){
+            alert("Second complete");
+            alert(request.status+request.statusText);
+        });
+    }
+
+}
+
+
+// ===================  Page 13=============================
+
+{
+    // Use camera to capture photo
+    function page13_Camera(source){
+        navigator.camera.getPicture(
+            function(imageURI){
+                var largeImage = document.getElementById('page13_cameraImage');
+                largeImage.style.display = 'block';
+                largeImage.src = imageURI;
+            },
+            function(evt){
+                alert(evt.target.error.code);
+            },
+            {
+                quality: 50,
+                destinationType: destinationType.FILE_URI,
+                allowEdit:true,
+                saveToPhotoAlbum:true,
+                correctOrientation:true,
+                sourceType:source
+            });
+    }
+
+    function page13_Save(){
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0,
+            function(fileSystem){
+                var image_path = $("#page13_cameraImage").prop("src");
+                var rootDir = fileSystem.root;
+                var image_rel_path = image_path.replace(rootDir.fullPath+"/", ""); // 只要 root 以下的路徑
+                var fs = rootDir.getFile(image_rel_path, null,
+                    function(fileEntry){
+                        fileEntry.file(function(file){
+                            var upload_url = "http://192.168.1.109:5000/api/srv2/";
+                            var options = new FileUploadOptions();
+                            var filename = file.fullPath;
+                            options.fileKey = "info_img1";
+                            options.fileName = filename.substr(filename.lastIndexOf("/")+1);
+                            options.mimeType = "image/jpeg";
+                            var params = {};
+                            // Other Text Data on the Form
+                            params.info_Year = $("#page13_txtYear").val();
+                            params.info_Create_Date = $("#page13_txtCreateDate").val();
+                            params.info_Target = $("#page13_txtTarget").val();
+                            params.info_Creator = $("#page13_txtCreator").val();
+                            params.info_Class = $("#page13_txtClass").val();
+                            params.info_Field = $("#page13_txtField").val();
+                            params.info_Subject = $("#page13_txtSubject").val();
+                            params.info_Content = $("#page13_txtContent").val();
+                            params.info_Memo = $("#page13_txtMemo").val();
+                            options.params = params;
+                            var ft = new FileTransfer();
+
+                            ft.upload(filename, upload_url,
+                                function(r){
+                                    alert("Code = " + r.responseCode);
+                                    alert("Response = " + r.response);
+                                    alert("Sent = " + r.bytesSent);
+                                    //page13_Submit_TextData(r.response);
+                                },
+                                function(error){
+                                    alert("An error has occurred: Code = " + error.code);
+                                    alert("upload error source " + error.source);
+                                    alert("upload error target " + error.target);
+                                },
+                                options, true);
+                        }, page13_Submit_Fail);
+                    },
+                    function(error){
+                        alert("filesystem getFile fail: "+error.code);
+                    });
+            },
+            page13_Submit_Fail
+        );
+    }
+
+    function page13_Submit_Fail(evt){
+        alert(evt.target.error.code);
+    }
+
+    function page13_Submit_TextData(fileid){
+        var jsonStr = '{' +
+            '"info_Year":"' + $("#page13_txtYear").val() + '",' +
+            '"info_Create_Date":"' + $("#page13_txtCreateDate").val() + '",'  +
+            '"info_Target":"' + $("#page13_txtTarget").val() + '",'  +
+            '"info_Creator":"' + $("#page13_txtCreator").val() + '",'  +
+            '"info_Class":"' + $("#page13_txtClass").val() + '",'  +
+            '"info_Field":"' + $("#page13_txtField").val() + '",' +
+            '"info_Subject":"' + $("#page13_txtSubject").val() + '", ' +
+            '"info_Content":"' + $("#page13_txtContent").val() + '", ' +
+            '"info_Memo":"' + $("#page13_txtMemo").val() + '",' +
+            '"info_img1":"' + fileid + '"'
+            + '}';
+        alert(jsonStr);
+        var request = $.ajax({
+            url:"http://192.168.1.109:5000/api/srv2/",
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            data: jsonStr,
+            dataType: 'json',
+            processData: false,
+            success:function(r){
+                alert("OK! ");
+            },
+            error:function(e){
+                alert("Error!"+ e.toString());
+            }
+        });
+        request.always(function(){
+            alert("Second complete");
+            alert(request.status+request.statusText);
+        });
+    }
+
+}
+
+// ===================  Page 14===========================
+function page14_GetData(){
+    $('#page14_ul').empty();
+    var request = $.ajax({
+        url:"http://192.168.1.109:5000/api/srv3/",
+        type: 'GET',
+        contentType: 'application/json; charset=utf-8',
+        dataType: 'json',
+        success:function(r){
+            alert("OK! ");
+            var count = 0;
+            for(var key in r){
+                count++;
+                var item = $.parseJSON(r[key]);
+                if(item){
+                    var title = count.toString();
+                    var span_content1 = '';
+                    for(var key1 in item){
+                        if(key1=='image'){
+                            var image_id_object = item[key1];
+                            var image_id = image_id_object['$oid'];
+                            var image_url = "http://192.168.1.109:5000/api/srv4/" + image_id;
+                        }else{
+                            span_content1 += '<p>'+key1+':'+item[key1]+'</p>';
+                        }
+                    }
+                    // 有圖片
+                    if(image_url){
+                        span_content1 += '<img  style="width: 100px; height: 100px" src="'+ image_url +'" />';
+                    }
+                    var html = '<div data-role="collapsible" data-collapsed="true"><h3>'+title+'</h3><span style="text-align: left">'+span_content1+'</span></div>';
+                    var $element = $(html).appendTo($('#page14_first_content'));
+                    $element.collapsible();
+                }
+            }
+        },
+        error:function(error){
+            alert("An error has occurred: Code = " + error.code);
+            alert("upload error source " + error.source);
+            alert("upload error target " + error.target);
+        }
+    });
+}
+
+
+// ===================  Page 15 ===========================
+function page15_GetData(){
+    alert('page15_GetData');
+    for(var v1=0 ; v1<5 ; v1++){
+        var title = v1;
+        var span_content1 = '<a href="#">image</a>';
+        var span_content2 = '<img src="http://192.168.1.109:5000/api/srv4/525b8c90fb492a3a5001ee12" />';
+        var html = '<div data-role="collapsible" data-collapsed="true"><h3>'+title+'</h3><span>'+span_content1+span_content2+'</span></div>';
+        var $element = $(html).appendTo($('#page15_content'));
+        $element.collapsible();
+    }
+
+
+    //var $element = $('<div data-role="collapsible" data-collapsed="true"><h3>22</h3><span>hello</span></div>').appendTo($('#page15_content'));
+    //$element.collapsible();
+
+}

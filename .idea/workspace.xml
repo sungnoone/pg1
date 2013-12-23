@@ -29,12 +29,12 @@
     <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="31f91839-470b-4344-88fb-0b98a6d98213" time="1373013704088" ignored="false" />
     <file path="/MyActivity.java" changelist="31f91839-470b-4344-88fb-0b98a6d98213" time="1373014683818" ignored="false" />
     <file path="/fragment.java" changelist="31f91839-470b-4344-88fb-0b98a6d98213" time="1373014641134" ignored="false" />
-    <file path="/index.html" changelist="31f91839-470b-4344-88fb-0b98a6d98213" time="1378113788691" ignored="false" />
-    <file path="/AndroidManifest.xml" changelist="31f91839-470b-4344-88fb-0b98a6d98213" time="1375421883094" ignored="false" />
+    <file path="/index.html" changelist="31f91839-470b-4344-88fb-0b98a6d98213" time="1381823873553" ignored="false" />
+    <file path="/AndroidManifest.xml" changelist="31f91839-470b-4344-88fb-0b98a6d98213" time="1380080233352" ignored="false" />
     <file path="/addinfo.html" changelist="31f91839-470b-4344-88fb-0b98a6d98213" time="1375335441195" ignored="false" />
-    <file path="/main.js" changelist="31f91839-470b-4344-88fb-0b98a6d98213" time="1378256553086" ignored="false" />
+    <file path="/main.js" changelist="31f91839-470b-4344-88fb-0b98a6d98213" time="1381826354147" ignored="false" />
     <file path="/query.html" changelist="31f91839-470b-4344-88fb-0b98a6d98213" time="1374456097944" ignored="false" />
-    <file path="/config.xml" changelist="31f91839-470b-4344-88fb-0b98a6d98213" time="1377843397520" ignored="false" />
+    <file path="/config.xml" changelist="31f91839-470b-4344-88fb-0b98a6d98213" time="1380080078600" ignored="false" />
     <file path="/SnapShot.html" changelist="31f91839-470b-4344-88fb-0b98a6d98213" time="1375083990240" ignored="false" />
     <file path="$PROJECT_DIR$/../CameraSample/gen/net/snoone/CameraSample/BuildConfig.java" changelist="31f91839-470b-4344-88fb-0b98a6d98213" time="1375069491850" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -105,10 +105,8 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="127" column="50" selection-start="6572" selection-end="6572" vertical-scroll-proportion="0.27737227">
-              <folding>
-                <element signature="n#style#0;n#img#0;n#div#1;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="29" column="18" selection-start="1607" selection-end="1607" vertical-scroll-proportion="0.055636898">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -116,13 +114,15 @@
       <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/www/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="241" column="50" selection-start="7938" selection-end="7938" vertical-scroll-proportion="0.0">
+            <state line="189" column="39" selection-start="5804" selection-end="5804" vertical-scroll-proportion="0.0">
               <folding>
-                <marker date="1378256559633" expanded="true" signature="11084:11115" placeholder="DROP TABLE I..." />
-                <marker date="1378256559633" expanded="true" signature="11142:11233" placeholder="CREATE TABLE..test_table..." />
-                <marker date="1378256559633" expanded="true" signature="11302:11354" placeholder="INSERT INTO ..." />
-                <marker date="1378256559633" expanded="true" signature="11660:11691" placeholder="SELECT data_..test_table..." />
-                <marker date="1378256559633" expanded="true" signature="12238:12262" placeholder="SELECT * FRO..test_table..." />
+                <marker date="1381913518752" expanded="true" signature="12102:12133" placeholder="DROP TABLE I..." />
+                <marker date="1381913518752" expanded="true" signature="12160:12251" placeholder="CREATE TABLE..test_table..." />
+                <marker date="1381913518752" expanded="true" signature="12320:12372" placeholder="INSERT INTO ..." />
+                <marker date="1381913518752" expanded="true" signature="12678:12709" placeholder="SELECT data_..test_table..." />
+                <marker date="1381913518752" expanded="true" signature="13256:13280" placeholder="SELECT * FRO..test_table..." />
+                <marker date="1381913518752" expanded="false" signature="35905:35932" placeholder="..." />
+                <marker date="1381913518752" expanded="false" signature="36097:36113" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -144,8 +144,9 @@
         <option value="$PROJECT_DIR$/src/com/phonegap/plugins/DatePickerPlugin.java" />
         <option value="$PROJECT_DIR$/assets/www/datePickerPlugin.js" />
         <option value="$PROJECT_DIR$/assets/www/addinfo.html" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/assets/www/css/style.css" />
         <option value="$PROJECT_DIR$/res/xml/config.xml" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/assets/www/index.html" />
         <option value="$PROJECT_DIR$/assets/www/js/main.js" />
       </list>
@@ -278,10 +279,6 @@
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xml" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -293,7 +290,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
+              <option name="myItemId" value="libs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -356,18 +353,18 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\IdeaProjects\pg1\assets\www" />
+      <recent name="E:\IdeaProjects\pg1\assets\www\css" />
       <recent name="E:\IdeaProjects\pg1\assets\www\js" />
       <recent name="E:\IdeaProjects\pg1\src\org\pgsqlite" />
-      <recent name="E:\IdeaProjects\pg1\assets\www\css" />
-      <recent name="E:\IdeaProjects\pg1\assets\www" />
       <recent name="E:\IdeaProjects\pg1\src\com\phonegap\plugins" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -409,6 +406,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -437,19 +447,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -463,6 +460,13 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
+      <JSDebuggerConfigurationSettings>
+        <option name="engineId" value="embedded" />
+        <option name="fileUrl" />
+      </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -484,13 +488,6 @@
       </option>
       <envs />
       <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugSession" factoryName="Local" singleton="true">
-      <JSDebuggerConfigurationSettings>
-        <option name="engineId" value="embedded" />
-        <option name="fileUrl" />
-      </JSDebuggerConfigurationSettings>
       <method />
     </configuration>
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
@@ -582,11 +579,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1284" height="899" extended-state="0" />
-    <editor active="false" />
+    <frame x="-4" y="-4" width="1284" height="899" extended-state="1" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32899022" sideWeight="0.68841547" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2203252" sideWeight="0.7696405" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -597,19 +595,18 @@
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31075698" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29083666" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756326" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2495935" sideWeight="0.68841547" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.7696405" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27560976" sideWeight="0.68841547" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28699186" sideWeight="0.7083888" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23035952" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.68841547" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23495935" sideWeight="0.68841547" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3292683" sideWeight="0.68841547" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -675,7 +672,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -683,97 +680,9 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/www/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="62" selection-start="437" selection-end="437" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1378256559633" expanded="true" signature="11084:11115" placeholder="DROP TABLE I..." />
-            <marker date="1378256559633" expanded="true" signature="11142:11233" placeholder="CREATE TABLE..test_table..." />
-            <marker date="1378256559633" expanded="true" signature="11302:11354" placeholder="INSERT INTO ..." />
-            <marker date="1378256559633" expanded="true" signature="11660:11691" placeholder="SELECT data_..test_table..." />
-            <marker date="1378256559633" expanded="true" signature="12238:12262" placeholder="SELECT * FRO..test_table..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#1;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="68" selection-start="547" selection-end="547" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="269" column="53" selection-start="10570" selection-end="10570" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1378256559633" expanded="true" signature="11084:11115" placeholder="DROP TABLE I..." />
-            <marker date="1378256559633" expanded="true" signature="11142:11233" placeholder="CREATE TABLE..test_table..." />
-            <marker date="1378256559633" expanded="true" signature="11302:11354" placeholder="INSERT INTO ..." />
-            <marker date="1378256559633" expanded="true" signature="11660:11691" placeholder="SELECT data_..test_table..." />
-            <marker date="1378256559633" expanded="true" signature="12238:12262" placeholder="SELECT * FRO..test_table..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#1;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="269" column="53" selection-start="10570" selection-end="10570" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1378256559633" expanded="true" signature="11084:11115" placeholder="DROP TABLE I..." />
-            <marker date="1378256559633" expanded="true" signature="11142:11233" placeholder="CREATE TABLE..test_table..." />
-            <marker date="1378256559633" expanded="true" signature="11302:11354" placeholder="INSERT INTO ..." />
-            <marker date="1378256559633" expanded="true" signature="11660:11691" placeholder="SELECT data_..test_table..." />
-            <marker date="1378256559633" expanded="true" signature="12238:12262" placeholder="SELECT * FRO..test_table..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/snoone/pg1/MyActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="38" selection-start="108" selection-end="108" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/phonegap/plugins/DatePickerPlugin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="51" selection-start="4883" selection-end="4883" vertical-scroll-proportion="0.1045082" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/www/datePickerPlugin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="56" selection-start="1752" selection-end="1752" vertical-scroll-proportion="0.9221311" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="41" selection-start="589" selection-end="589" vertical-scroll-proportion="0.16804408">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/xml/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="0" selection-start="4217" selection-end="4317" vertical-scroll-proportion="0.6659483">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/pgsqlite/SQLitePlugin.java">
@@ -790,30 +699,93 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/js/json2.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/jquery.fileupload.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/css/jquery.fileupload-ui-noscript.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="54" selection-start="260" selection-end="260" vertical-scroll-proportion="0.23618785" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/jquery.xdr-transport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/js/jquery.ui.widget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="40" selection-start="54" selection-end="54" vertical-scroll-proportion="0.18811882" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/phonegap/plugins/DatePickerPlugin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="136" column="72" selection-start="5100" selection-end="5100" vertical-scroll-proportion="2.679558">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/xml/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="81" selection-start="3338" selection-end="3338" vertical-scroll-proportion="-4.56">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="57" selection-start="399" selection-end="399" vertical-scroll-proportion="0.23618785">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/www/datePickerPlugin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="46" selection-start="1221" selection-end="1221" vertical-scroll-proportion="0.20994475">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="241" column="50" selection-start="7938" selection-end="7938" vertical-scroll-proportion="0.0">
+        <state line="189" column="39" selection-start="5804" selection-end="5804" vertical-scroll-proportion="0.0">
           <folding>
-            <marker date="1378256559633" expanded="true" signature="11084:11115" placeholder="DROP TABLE I..." />
-            <marker date="1378256559633" expanded="true" signature="11142:11233" placeholder="CREATE TABLE..test_table..." />
-            <marker date="1378256559633" expanded="true" signature="11302:11354" placeholder="INSERT INTO ..." />
-            <marker date="1378256559633" expanded="true" signature="11660:11691" placeholder="SELECT data_..test_table..." />
-            <marker date="1378256559633" expanded="true" signature="12238:12262" placeholder="SELECT * FRO..test_table..." />
+            <marker date="1381913518752" expanded="true" signature="12102:12133" placeholder="DROP TABLE I..." />
+            <marker date="1381913518752" expanded="true" signature="12160:12251" placeholder="CREATE TABLE..test_table..." />
+            <marker date="1381913518752" expanded="true" signature="12320:12372" placeholder="INSERT INTO ..." />
+            <marker date="1381913518752" expanded="true" signature="12678:12709" placeholder="SELECT data_..test_table..." />
+            <marker date="1381913518752" expanded="true" signature="13256:13280" placeholder="SELECT * FRO..test_table..." />
+            <marker date="1381913518752" expanded="false" signature="35905:35932" placeholder="..." />
+            <marker date="1381913518752" expanded="false" signature="36097:36113" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="50" selection-start="6572" selection-end="6572" vertical-scroll-proportion="0.27737227">
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#1;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="29" column="18" selection-start="1607" selection-end="1607" vertical-scroll-proportion="0.055636898">
+          <folding />
         </state>
       </provider>
     </entry>
